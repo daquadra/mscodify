@@ -1,0 +1,12 @@
+{
+  "name": "Madson Lima",
+  "role": "Desenvolvedor Full Stack",
+  "photo": "/images/profile.jpeg",
+  "bio": "Desenvolvedor apaixonado por criar soluções digitais que fazem a diferença. Com experiência em desenvolvimento web, PWAs e análise de sistemas, transformo ideias em produtos funcionais e escaláveis.",
+  "whatsapp": "5569984432406",
+  "email": "madson.lima@live.com",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/madsonlima-dev",
+    "github": "https://github.com/daquadra"
+  }
+}

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #121212;
+  --primary: #0055FF;
+  --primary-dark: #0044CC;
+}
+
+:root.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+}
+
+:root.light {
+  --background: #ffffff;
+  --foreground: #121212;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-dark: #121212;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--foreground);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Garantir que elementos com bg-background usem a cor correta */
+.bg-background {
+  background-color: var(--background) !important;
+}
+
+/* Garantir que textos usem a cor correta */
+.text-foreground {
+  color: var(--foreground) !important;
+}

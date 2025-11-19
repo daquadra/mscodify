@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Persisti - Transforme suas dívidas em conquistas",
+    "description": "Sistema gamificado de gestão de dívidas que transforma sua jornada financeira em uma aventura divertida e motivadora.",
+    "link": "https://persisti.mscodify.dev.br/",
+    "technologies": ["React", "Node.js", "PostgreSQL"],
+    "icon": "🎯"
+  },
+  {
+    "id": 2,
+    "name": "ReqFly - Http Requests Simplified",
+    "description": "Sistema simplificado de requisições HTTP, tal como Insomnia ou Postman.",
+    "link": "#",
+    "technologies": ["Vue.js", "Tauri"],
+    "icon": "🪶"
+  }
+]

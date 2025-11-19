@@ -83,17 +83,6 @@ export default function AboutSection() {
                     <FaGithub className="w-6 h-6" />
                   </a>
                 )}
-                {profileData.social.instagram && (
-                  <a
-                    href={profileData.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/60 hover:text-primary transition-colors"
-                    title="Instagram"
-                  >
-                    <FaInstagram className="w-6 h-6" />
-                  </a>
-                )}
               </div>
             </div>
           </div>

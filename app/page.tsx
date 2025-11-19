@@ -9,8 +9,123 @@ import projectsData from "../data/projects.json";
 import profileData from "../data/profile.json";
 
 export default function Home() {
+  // JSON-LD Structured Data para SEO
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://mscodify.dev.br/#organization',
+        name: 'MSCodify',
+        url: 'https://mscodify.dev.br',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://mscodify.dev.br/images/mscodify_logo_f.png',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+55-69-98443-2406',
+          contactType: 'customer service',
+          email: 'madson.lima@live.com',
+          availableLanguage: ['pt-BR', 'en'],
+        },
+        sameAs: [
+          'https://www.linkedin.com/in/madsonlima-dev',
+          'https://github.com/daquadra',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://mscodify.dev.br/#website',
+        url: 'https://mscodify.dev.br',
+        name: 'MSCodify',
+        description: 'Desenvolvimento de software profissional, PWAs e análise de sistemas',
+        publisher: {
+          '@id': 'https://mscodify.dev.br/#organization',
+        },
+        inLanguage: 'pt-BR',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://mscodify.dev.br/#webpage',
+        url: 'https://mscodify.dev.br',
+        name: 'MSCodify - Desenvolvimento de Software Profissional',
+        isPartOf: {
+          '@id': 'https://mscodify.dev.br/#website',
+        },
+        about: {
+          '@id': 'https://mscodify.dev.br/#organization',
+        },
+        description: 'Transforme suas ideias em soluções digitais. Desenvolvimento web, PWAs e análise de sistemas.',
+        inLanguage: 'pt-BR',
+      },
+      {
+        '@type': 'Person',
+        '@id': 'https://mscodify.dev.br/#person',
+        name: 'Madson Lima',
+        jobTitle: 'Desenvolvedor Full Stack',
+        description: profileData.bio,
+        email: 'madson.lima@live.com',
+        image: 'https://mscodify.dev.br/images/profile.jpeg',
+        url: 'https://mscodify.dev.br',
+        sameAs: [
+          'https://www.linkedin.com/in/madsonlima-dev',
+          'https://github.com/daquadra',
+        ],
+        worksFor: {
+          '@id': 'https://mscodify.dev.br/#organization',
+        },
+      },
+      {
+        '@type': 'Service',
+        '@id': 'https://mscodify.dev.br/#service',
+        name: 'Desenvolvimento de Software',
+        provider: {
+          '@id': 'https://mscodify.dev.br/#organization',
+        },
+        serviceType: 'Software Development',
+        areaServed: 'BR',
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Serviços de Desenvolvimento',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Desenvolvimento Web',
+                description: 'Sites institucionais, e-commerce, sistemas web e aplicações personalizadas',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Progressive Web Apps',
+                description: 'PWAs que funcionam em qualquer dispositivo com experiência de app nativo',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Análise de Sistemas',
+                description: 'Avaliação técnica de sistemas, identificação de melhorias e planejamento',
+              },
+            },
+          ],
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header/Navigation */}
       <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-foreground/10 z-50">
         <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">

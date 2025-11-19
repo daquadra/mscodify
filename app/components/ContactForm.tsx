@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
           Nome
@@ -90,6 +90,7 @@ export default function ContactForm() {
           required
           minLength={2}
           maxLength={100}
+          suppressHydrationWarning
         />
       </div>
       <div>
@@ -105,6 +106,7 @@ export default function ContactForm() {
           placeholder="seu@email.com"
           required
           maxLength={100}
+          suppressHydrationWarning
         />
       </div>
       <div>
@@ -121,6 +123,7 @@ export default function ContactForm() {
           required
           minLength={10}
           maxLength={1000}
+          suppressHydrationWarning
         />
       </div>
       <button

@@ -51,7 +51,7 @@ export default function MobileMenu() {
 
       {/* Menu Slide */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-background border-l border-foreground/10 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-64 bg-background shadow-2xl border-l-2 border-primary/20 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

@@ -4,15 +4,44 @@
     "name": "Persisti - Transforme suas dívidas em conquistas",
     "description": "Sistema gamificado de gestão de dívidas que transforma sua jornada financeira em uma aventura divertida e motivadora.",
     "link": "https://persisti.mscodify.dev.br/",
-    "technologies": ["React", "Node.js", "PostgreSQL"],
-    "icon": "🎯"
+    "technologies": [
+      {
+        "name": "React",
+        "logo": null,
+        "website": "https://react.dev"
+      },
+      {
+        "name": "Node.js",
+        "logo": null,
+        "website": "https://nodejs.org"
+      },
+      {
+        "name": "PostgreSQL",
+        "logo": null,
+        "website": "https://www.postgresql.org"
+      }
+    ],
+    "backgroundImage": null,
+    "logo": null
   },
   {
     "id": 2,
     "name": "ReqFly - Http Requests Simplified",
     "description": "Sistema simplificado de requisições HTTP, tal como Insomnia ou Postman.",
     "link": "#",
-    "technologies": ["Vue.js", "Tauri"],
-    "icon": "🪶"
+    "technologies": [
+      {
+        "name": "Vue.js",
+        "logo": null,
+        "website": "https://vuejs.org"
+      },
+      {
+        "name": "Tauri",
+        "logo": null,
+        "website": "https://tauri.app"
+      }
+    ],
+    "backgroundImage": null,
+    "logo": null
   }
 ]

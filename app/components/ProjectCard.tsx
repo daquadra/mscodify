@@ -2,22 +2,22 @@
 
 import Image from 'next/image';
 
-interface Technology {
+export interface Technology {
   name: string;
-  logo?: string;
-  website?: string;
+  logo?: string | null;
+  website?: string | null;
 }
 
-type ProjectStatus = 'Em desenvolvimento' | 'MVP' | 'Protótipo' | 'Comercial';
+export type ProjectStatus = 'Em desenvolvimento' | 'MVP' | 'Protótipo' | 'Comercial';
 
-interface Project {
+export interface Project {
   id: number;
   name: string;
   description: string;
   link: string;
   technologies: Technology[];
-  backgroundImage?: string;
-  logo?: string;
+  backgroundImage?: string | null;
+  logo?: string | null;
   status?: ProjectStatus;
 }
 

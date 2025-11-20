@@ -2,7 +2,7 @@ import Image from "next/image";
 import Logo from "./components/Logo";
 import ThemeToggle from "./components/ThemeToggle";
 import MobileMenu from "./components/MobileMenu";
-import ProjectCard from "./components/ProjectCard";
+import ProjectCard, { type Project } from "./components/ProjectCard";
 import ContactForm from "./components/ContactForm";
 import AboutSection from "./components/AboutSection";
 import projectsData from "../data/projects.json";
@@ -253,7 +253,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {projectsData.map((project) => (
+            {(projectsData as Project[]).map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>

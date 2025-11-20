@@ -20,7 +20,8 @@ Cada projeto no array deve seguir esta estrutura:
     }
   ],
   "backgroundImage": "/images/projects/projeto-bg.jpg",
-  "logo": "/images/projects/projeto-logo.png"
+  "logo": "/images/projects/projeto-logo.png",
+  "status": "MVP"
 }
 ```
 
@@ -33,6 +34,17 @@ Cada projeto no array deve seguir esta estrutura:
 - **technologies** (array): Lista de tecnologias usadas
 
 ## Campos Opcionais
+
+### status
+- **Tipo**: string ou null
+- **Descrição**: Status atual do projeto
+- **Valores permitidos**:
+  - `"Em desenvolvimento"` - Projeto em desenvolvimento ativo (amarelo)
+  - `"MVP"` - Produto mínimo viável (azul)
+  - `"Protótipo"` - Versão de demonstração (roxo)
+  - `"Comercial"` - Produto em produção comercial (verde)
+- **Comportamento**: Exibe uma tag colorida no canto superior direito do card
+- **Exemplo**: `"status": "MVP"`
 
 ### backgroundImage
 - **Tipo**: string ou null

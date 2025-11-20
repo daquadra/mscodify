@@ -8,6 +8,8 @@ interface Technology {
   website?: string;
 }
 
+type ProjectStatus = 'Em desenvolvimento' | 'MVP' | 'Protótipo' | 'Comercial';
+
 interface Project {
   id: number;
   name: string;
@@ -16,6 +18,7 @@ interface Project {
   technologies: Technology[];
   backgroundImage?: string;
   logo?: string;
+  status?: ProjectStatus;
 }
 
 interface ProjectCardProps {
@@ -27,6 +30,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     if (project.link && project.link !== '#') {
       window.open(project.link, '_blank', 'noopener,noreferrer');
     }
+  };
+
+  const getStatusColors = (status?: ProjectStatus) => {
+    if (!status) return null;
+
+    const colors = {
+      'Em desenvolvimento': 'bg-yellow-500/90 text-white border-yellow-600',
+      'MVP': 'bg-blue-500/90 text-white border-blue-600',
+      'Protótipo': 'bg-purple-500/90 text-white border-purple-600',
+      'Comercial': 'bg-green-500/90 text-white border-green-600',
+    };
+
+    return colors[status];
   };
 
   return (
@@ -43,14 +59,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             src={project.backgroundImage}
             alt={project.name}
             fill
-            className="object-cover blur-sm group-hover:blur-none group-hover:scale-105 transition-all duration-300"
+            className="object-cover blur-[2px] group-hover:blur-none group-hover:scale-105 transition-all duration-300"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         ) : (
           <div className="w-full h-full bg-linear-to-br from-primary/20 to-primary/5" />
         )}
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/60 to-background" />
 
         {/* Logo do Projeto */}
         {project.logo && (
@@ -62,6 +79,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               height={48}
               className="object-contain"
             />
+          </div>
+        )}
+
+        {/* Tag de Status */}
+        {project.status && (
+          <div className={`absolute top-6 right-6 px-3 py-1.5 rounded-full text-xs font-semibold border ${getStatusColors(project.status)} shadow-lg backdrop-blur-sm`}>
+            {project.status}
           </div>
         )}
       </div>

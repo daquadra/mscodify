@@ -21,8 +21,9 @@
         "website": "https://www.postgresql.org"
       }
     ],
-    "backgroundImage": null,
-    "logo": null
+    "backgroundImage": "/images/persisti/background.png",
+    "logo": "/images/persisti/logo.png",
+    "status": "MVP"
   },
   {
     "id": 2,
@@ -38,10 +39,11 @@
       {
         "name": "Tauri",
         "logo": null,
-        "website": "https://tauri.app"
+        "website": "https://v2.tauri.app/"
       }
     ],
-    "backgroundImage": null,
-    "logo": null
+    "backgroundImage": "/images/reqfly/background.png",
+    "logo": "/images/reqfly/logo.png",
+    "status": "Em desenvolvimento"
   }
 ]

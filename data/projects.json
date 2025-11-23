@@ -29,7 +29,7 @@
     "id": 2,
     "name": "ReqFly - Http Requests Simplified",
     "description": "Sistema simplificado de requisições HTTP, tal como Insomnia ou Postman.",
-    "link": "#",
+    "link": "https://reqfly.mscodify.dev.br/",
     "technologies": [
       {
         "name": "Vue.js",

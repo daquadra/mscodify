@@ -32,12 +32,15 @@ export default function ProjectCard({ title, description, image, tags, badges, l
       <Card className="overflow-hidden border-border/50 bg-card/50 hover:bg-card/80 transition-all duration-300 group h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           {showImage ? (
-            <img 
-              src={image} 
-              alt={title} 
-              className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-              onError={() => setImageFailed(true)}
-            />
+            <>
+              <img 
+                src={image} 
+                alt={title} 
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+                onError={() => setImageFailed(true)}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
+            </>
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted/60 via-background to-muted/40 text-muted-foreground">
               <div className="flex items-center gap-2 text-sm font-medium">
@@ -46,7 +49,6 @@ export default function ProjectCard({ title, description, image, tags, badges, l
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-60" />
         </div>
         
         <CardHeader className="space-y-2 pb-2">

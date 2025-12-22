@@ -6,6 +6,8 @@ export const site = {
   url: "https://mscodify.dev.br",
   locale: "pt-BR",
   ogImage: "/opengraph.svg",
+  contactEmail: "suporte@mscodify.dev.br",
+  contactPhone: "+55 69 98443-2406",
   keywords: [
     "desenvolvimento de sistemas",
     "Next.js",

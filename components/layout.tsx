@@ -48,7 +48,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
               >
                 {link.name}
               </button>
@@ -72,28 +72,36 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Nav */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-16 left-0 right-0 glass border-b border-border/40 p-4 flex flex-col gap-4"
-          >
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="text-left text-lg font-medium text-foreground py-2 border-b border-white/5"
-              >
-                {link.name}
-              </button>
-            ))}
-            <Button 
-              onClick={() => scrollToSection("#contact")}
-              className="w-full mt-2 bg-primary font-bold"
+          <>
+            <button
+              type="button"
+              aria-label="Fechar menu"
+              onClick={() => setIsMenuOpen(false)}
+              className="md:hidden fixed top-16 left-0 right-0 bottom-0 bg-black/10"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden absolute top-16 left-0 right-0 glass bg-background/60 border-b border-border/40 p-4 flex flex-col gap-4"
             >
-              Orçar Projeto
-            </Button>
-          </motion.div>
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-left text-lg font-medium text-foreground py-2 border-b border-white/5 cursor-pointer"
+                >
+                  {link.name}
+                </button>
+              ))}
+              <Button 
+                onClick={() => scrollToSection("#contact")}
+                className="w-full mt-2 bg-primary font-bold"
+              >
+                Orçar Projeto
+              </Button>
+            </motion.div>
+          </>
         )}
       </nav>
 
@@ -117,8 +125,8 @@ export default function Layout({ children }: LayoutProps) {
           <div>
             <h4 className="font-heading font-bold mb-4">Links Rápidos</h4>
             <ul className="space-y-2">
-              <li><button onClick={() => scrollToSection("#projects")} className="text-muted-foreground hover:text-primary">Portfólio</button></li>
-              <li><button onClick={() => scrollToSection("#services")} className="text-muted-foreground hover:text-primary">Serviços</button></li>
+              <li><button onClick={() => scrollToSection("#projects")} className="text-muted-foreground hover:text-primary cursor-pointer">Portfólio</button></li>
+              <li><button onClick={() => scrollToSection("#services")} className="text-muted-foreground hover:text-primary cursor-pointer">Serviços</button></li>
             </ul>
           </div>
           <div>

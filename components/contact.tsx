@@ -158,10 +158,10 @@ export default function Contact() {
             </div>
           </div>
 
-          <Card className="bg-card/50 border-white/5 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <form className="space-y-6" onSubmit={handleSubmit} suppressHydrationWarning>
-                <div className="grid grid-cols-2 gap-4">
+          <Card className="bg-card/50 border-white/5 backdrop-blur-sm w-full">
+            <CardContent className="p-3">
+              <form className="space-y-5 sm:space-y-6" onSubmit={handleSubmit} suppressHydrationWarning>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Nome</label>
                     <Input
@@ -193,7 +193,7 @@ export default function Contact() {
                   <Textarea
                     name="message"
                     placeholder="Me conte mais sobre sua ideia..."
-                    className="min-h-[120px] bg-background/50 border-white/10"
+                    className="min-h-[100px] sm:min-h-[120px] bg-background/50 border-white/10"
                   />
                 </div>
                 <div className="space-y-2">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: site.keywords,
+  icons: {
+    icon: "/favicon.svg",
+  },
   alternates: {
     canonical: "/",
   },
@@ -58,11 +62,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    url: site.url,
+    logo: new URL(site.ogImage, site.url).toString(),
+  };
+  const localBusinessLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: site.name,
+    url: site.url,
+    email: site.contactEmail,
+    telephone: site.contactPhone,
+    sameAs: [site.url],
+  };
+
   return (
     <html lang="pt-BR">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
+        <Script
+          id="ld-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationLd, localBusinessLd]) }}
+        />
         {children}
       </body>
     </html>

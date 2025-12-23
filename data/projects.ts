@@ -26,12 +26,21 @@ export const projects: Project[] = [
     link: "#",
   },
   {
+    title: "ForgeKitDev - Developer Tools Suite",
+    description:
+      "Aplicação web com ferramentas essenciais para desenvolvedores, incluindo geradores de código, validadores e utilitários.",
+    image: "/generated_images/banner_forgekitdev.png",
+    tags: ["React.js", "Tailwind", "Node.js"],
+    badges: ["Free", "PWA"],
+    link: "https://forgekitdev.mscodify.dev.br/",
+  },
+  {
     title: "Cali30 - Fitness Tracker App",
     description:
       "Aplicação web para rastreamento de atividades físicas, monitoramento de progresso e definição de metas de saúde.",
     image: "",
-    tags: ["Next.js", "Tailwind", "SEO"],
-    badges: ["MVP", "Free"],
+    tags: ["React.js", "Tailwind"],
+    badges: ["Em desenvolvimento", "Free"],
     link: "#",
   },
 ];

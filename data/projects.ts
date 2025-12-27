@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: "/generated_images/contaleve_banner_1.png",
     tags: ["Nuxt.js", "Tailwind", "Node.js"],
     badges: ["Em desenvolvimento", "Free/Paid", "MVP", "PWA"],
-    link: "#",
+    link: "https://contaleve.mscodify.dev.br/",
   },
   {
     title: "ForgeKitDev - Developer Tools Suite",
@@ -33,14 +33,5 @@ export const projects: Project[] = [
     tags: ["React.js", "Tailwind", "Node.js"],
     badges: ["Free", "PWA"],
     link: "https://forgekitdev.mscodify.dev.br/",
-  },
-  {
-    title: "Cali30 - Fitness Tracker App",
-    description:
-      "Aplicação web para rastreamento de atividades físicas, monitoramento de progresso e definição de metas de saúde.",
-    image: "",
-    tags: ["React.js", "Tailwind"],
-    badges: ["Em desenvolvimento", "Free"],
-    link: "#",
-  },
+  }
 ];

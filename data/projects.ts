@@ -33,5 +33,14 @@ export const projects: Project[] = [
     tags: ["React.js", "Tailwind", "Node.js"],
     badges: ["Free", "PWA"],
     link: "https://forgekitdev.mscodify.dev.br/",
+  },
+  {
+    title: "ToolPocket - Tools for everyday use",
+    description:
+      "Aplicação com ferramentas práticas para facilitar tarefas diárias, como conversores, calculadoras e geradores.",
+    image: "/generated_images/banner_toolpocket.png",
+    tags: ["React.js", "Node.js"],
+    badges: ["Free", "PWA"],
+    link: "https://toolpocket.mscodify.dev.br/",
   }
 ];

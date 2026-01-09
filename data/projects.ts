@@ -17,13 +17,13 @@ export const projects: Project[] = [
     link: "https://reqfly.mscodify.dev.br",
   },
   {
-    title: "ContaLeve - Personal Finance Manager",
+    title: "Saldo Leve - Personal Finance Manager",
     description:
       "Aplicação web para gerenciamento financeiro pessoal, com orçamentos, metas e relatórios detalhados.",
     image: "/generated_images/contaleve_banner_1.png",
     tags: ["Nuxt.js", "Tailwind", "Node.js"],
     badges: ["Em desenvolvimento", "Free/Paid", "MVP", "PWA"],
-    link: "https://contaleve.mscodify.dev.br/",
+    link: "https://saldoleve.com.br/",
   },
   {
     title: "ForgeKitDev - Developer Tools Suite",

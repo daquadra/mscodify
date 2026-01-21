@@ -42,5 +42,14 @@ export const projects: Project[] = [
     tags: ["React.js", "Node.js"],
     badges: ["Free", "PWA"],
     link: "https://toolpocket.mscodify.dev.br/",
+  },
+    {
+    title: "Cloudless Play - Free player for your offline media",
+    description:
+      "Player gratuito para reprodução de mídia offline, suportando diversos formatos de áudio.",
+    image: "/generated_images/banner_cloudless-player.png",
+    tags: ["Vite", "Node.js"],
+    badges: ["Free", "PWA"],
+    link: "https://cloudless-play.mscodify.dev.br/",
   }
 ];

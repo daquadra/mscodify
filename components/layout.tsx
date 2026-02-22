@@ -3,26 +3,57 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, Code2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
+const NAV_LINKS = [
+  { name: "Sistemas", href: "#projects" },
+  { name: "Serviços", href: "#services" },
+  { name: "Contato", href: "#contact" },
+];
+
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(NAV_LINKS[0].href);
 
-  const navLinks = [
-    { name: "Sistemas", href: "#projects" },
-    { name: "Serviços", href: "#services" },
-    { name: "Contato", href: "#contact" },
-  ];
+  useEffect(() => {
+    const sections = NAV_LINKS
+      .map((link) => document.querySelector(link.href))
+      .filter((section): section is Element => Boolean(section));
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (!visibleEntries.length) return;
+
+        const activeId = `#${visibleEntries[0].target.id}`;
+        setActiveSection(activeId);
+      },
+      {
+        threshold: [0.3, 0.5, 0.7],
+        rootMargin: "-96px 0px -35% 0px",
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id);
       setIsMenuOpen(false);
     }
   };
@@ -44,11 +75,16 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                aria-current={activeSection === link.href ? "page" : undefined}
+                className={`text-sm font-medium transition-colors cursor-pointer ${
+                  activeSection === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 {link.name}
               </button>
@@ -85,11 +121,16 @@ export default function Layout({ children }: LayoutProps) {
               exit={{ opacity: 0, y: -20 }}
               className="md:hidden absolute top-16 left-0 right-0 glass bg-background/60 border-b border-border/40 p-4 flex flex-col gap-4"
             >
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-left text-lg font-medium text-foreground py-2 border-b border-white/5 cursor-pointer"
+                  aria-current={activeSection === link.href ? "page" : undefined}
+                  className={`text-left text-lg font-medium py-2 border-b border-white/5 cursor-pointer transition-colors ${
+                    activeSection === link.href
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
                 >
                   {link.name}
                 </button>

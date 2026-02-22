@@ -51,5 +51,13 @@ export const projects: Project[] = [
     tags: ["Vite", "Node.js"],
     badges: ["Free", "PWA"],
     link: "https://cloudless-play.mscodify.dev.br/",
+  },
+  {
+    title: "VetAgende - Agendamento online para clínicas e petshops",
+    description: "Crie sua página pública em minutos e reduza as faltas com lembretes automáticos. Foque no que importa: cuidar dos animais.",
+    image: "/generated_images/banner_vetagende.png",
+    tags: ["Next.js", "Node.js"],
+    badges: ["Paid"],
+    link: "https://vetagende.com.br/",
   }
 ];

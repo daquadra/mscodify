@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: site.keywords,
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
   },
   alternates: {
     canonical: "/",
@@ -41,6 +45,7 @@ export const metadata: Metadata = {
         url: site.ogImage,
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: site.name,
       },
     ],
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: [site.ogImage],
+    images: [{ url: site.ogImage, alt: site.name }],
   },
   robots: {
     index: true,

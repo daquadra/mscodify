@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 
-const inter = Inter({
-  variable: "--font-sans",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
@@ -79,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${figtree.variable} ${bricolage.variable} antialiased`}
       >
         <Script
           id="ld-organization"

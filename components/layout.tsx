@@ -3,31 +3,34 @@ import { site } from "@/data/site";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary selection:text-primary-foreground">
-      <div className="mx-auto max-w-4xl px-6">
-        <header className="pt-8">
-          <Link href="/" className="font-heading text-lg font-bold tracking-tight">
-            {site.name}
-          </Link>
-        </header>
+    <div className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
+      <header className="mx-auto max-w-5xl px-6 pt-8">
+        <Link
+          href="/"
+          className="font-heading text-2xl font-extrabold tracking-tight"
+        >
+          {site.name}
+        </Link>
+      </header>
 
-        <main>{children}</main>
+      <main>{children}</main>
 
-        <footer className="flex flex-wrap justify-between gap-x-6 gap-y-3 py-12 text-sm text-muted-foreground">
+      <footer className="border-t-2 border-foreground bg-foreground text-background">
+        <div className="mx-auto flex max-w-5xl flex-wrap justify-between gap-x-6 gap-y-3 px-6 py-10 text-base">
           <p>
-            Contato:{" "}
+            Dúvida ou sugestão?{" "}
             <a
               href={`mailto:${site.contactEmail}`}
-              className="underline underline-offset-4 hover:text-foreground"
+              className="font-semibold underline underline-offset-4 hover:no-underline"
             >
               {site.contactEmail}
             </a>{" "}
-            ·{" "}
+            ou{" "}
             <a
               href={site.whatsapp}
               target="_blank"
               rel="noopener"
-              className="underline underline-offset-4 hover:text-foreground"
+              className="font-semibold underline underline-offset-4 hover:no-underline"
             >
               WhatsApp
             </a>
@@ -35,8 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <p>
             © {new Date().getFullYear()} {site.name}
           </p>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <ul className="border-b border-border">
-        {projects.map((project) => (
-          <ProductRow key={project.slug} {...project} />
+      <ul>
+        {projects.map((project, index) => (
+          <ProductRow key={project.slug} index={index} {...project} />
         ))}
       </ul>
     </Layout>

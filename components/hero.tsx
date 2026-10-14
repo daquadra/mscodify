@@ -1,10 +1,16 @@
 export default function Hero() {
   return (
-    <section className="pb-16 pt-20 md:pt-28">
-      <h1 className="max-w-3xl font-heading text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-        Pequenos produtos web que resolvem uma coisa bem.
+    <section className="mx-auto max-w-5xl px-6 pb-16 pt-16 md:pb-24 md:pt-28">
+      <h1 className="rise max-w-4xl text-[clamp(2.75rem,8.5vw,6.5rem)] font-extrabold leading-[0.95] tracking-tight">
+        Pequenos produtos web que resolvem{" "}
+        <span className="underline decoration-wavy decoration-[0.06em] underline-offset-[0.12em]">
+          uma coisa bem.
+        </span>
       </h1>
-      <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+      <p
+        className="rise mt-8 max-w-md text-xl leading-snug text-muted-foreground"
+        style={{ "--i": 1 } as React.CSSProperties}
+      >
         Ferramentas para usar hoje, direto no navegador. Escolha uma e abra.
       </p>
     </section>

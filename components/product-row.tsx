@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import type { CSSProperties } from "react";
 import type { Project } from "@/data/projects";
 
 export default function ProductRow({
@@ -7,35 +8,57 @@ export default function ProductRow({
   tagline,
   status,
   image,
+  color,
   link,
-}: Project) {
+  index,
+}: Project & { index: number }) {
+  const style = { "--accent": color, "--i": index + 2 } as CSSProperties;
+
   return (
-    <li>
+    <li className="rise border-t-2 border-foreground" style={style}>
       <a
         href={link}
         target="_blank"
         rel="noopener"
-        className="group flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-border px-4 py-7 -mx-4 rounded-lg transition-colors hover:bg-white/[0.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        className="group block transition-colors duration-200 hover:bg-(--accent) focus-visible:bg-(--accent) focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-foreground"
       >
-        <div className="relative h-14 w-24 shrink-0 overflow-hidden rounded-md border border-border bg-card">
-          <Image src={image} alt="" fill sizes="96px" className="object-cover" />
-        </div>
+        <div className="mx-auto grid max-w-5xl items-center gap-x-8 gap-y-5 px-6 py-8 md:grid-cols-[auto_1fr_auto] md:py-10">
+          <div
+            className="w-40 rounded-2xl p-2 transition-transform duration-300 ease-out motion-safe:group-hover:-rotate-3 motion-safe:group-hover:scale-105 md:w-48"
+            style={{ backgroundColor: "var(--accent)" }}
+          >
+            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-background">
+              <Image
+                src={image}
+                alt=""
+                fill
+                sizes="(min-width: 768px) 176px, 144px"
+                className="object-cover"
+              />
+            </div>
+          </div>
 
-        <div className="min-w-0 flex-1 basis-72">
-          <h2 className="font-heading text-2xl font-bold">{name}</h2>
-          <p className="mt-1 text-muted-foreground">{tagline}</p>
-        </div>
+          <div className="min-w-0">
+            <h2 className="text-4xl font-extrabold leading-none tracking-tight md:text-5xl">
+              {name}
+            </h2>
+            <p className="mt-3 max-w-md text-lg leading-snug text-muted-foreground group-hover:text-foreground">
+              {tagline}
+            </p>
+          </div>
 
-        <div className="flex items-center gap-5 text-sm text-muted-foreground">
-          <span>{status.join(" · ")}</span>
-          <span className="flex items-center gap-1 font-medium text-foreground group-hover:text-primary">
-            Abrir
-            <span className="sr-only"> {name} em nova aba</span>
-            <ArrowUpRight
-              aria-hidden="true"
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </span>
+          <div className="flex items-center gap-4 md:flex-col md:items-end md:gap-3">
+            <span className="rounded-full border-2 border-foreground px-3 py-1 text-sm font-semibold">
+              {status.join(" · ")}
+            </span>
+            <span className="flex size-12 items-center justify-center rounded-full bg-foreground text-background md:order-first">
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-6 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+              <span className="sr-only">Abrir {name} em nova aba</span>
+            </span>
+          </div>
         </div>
       </a>
     </li>

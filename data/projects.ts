@@ -1,63 +1,62 @@
+export type Status = "Grátis" | "Pago" | "Grátis e pago" | "Em desenvolvimento";
+
 export interface Project {
-  title: string;
-  description: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  status: Status[];
   image: string;
-  tags: string[];
-  badges: string[];
-  link?: string;
+  link: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "ReqFly - Http Requests Simplified",
-    description: "Sistema windows para gerenciamento e automação de requisições HTTP, facilitando testes e integrações.",
-    image: "/generated_images/reqfly_banner_3.png",
-    tags: ["NextJs", "React", "Node.js", "Tauri", "Tailwind"],
-    badges: ["Em desenvolvimento", "Free"],
-    link: "https://reqfly.mscodify.dev.br",
-  },
-  {
-    title: "Saldo Leve - Personal Finance Manager",
-    description:
-      "Aplicação web para gerenciamento financeiro pessoal, com orçamentos, metas e relatórios detalhados.",
+    slug: "saldo-leve",
+    name: "Saldo Leve",
+    tagline: "Controle seu dinheiro: orçamento, metas e relatórios simples.",
+    status: ["Grátis e pago"],
     image: "/generated_images/contaleve_banner_1.png",
-    tags: ["Nuxt.js", "Tailwind", "Node.js"],
-    badges: ["Em desenvolvimento", "Free/Paid", "MVP", "PWA"],
     link: "https://saldoleve.com.br/",
   },
   {
-    title: "ForgeKitDev - Developer Tools Suite",
-    description:
-      "Aplicação web com ferramentas essenciais para desenvolvedores, incluindo geradores de código, validadores e utilitários.",
+    slug: "toolpocket",
+    name: "ToolPocket",
+    tagline: "Conversores, calculadoras e geradores para o dia a dia.",
+    status: ["Grátis"],
+    image: "/generated_images/banner_toolpocket.png",
+    link: "https://toolpocket.mscodify.dev.br/",
+  },
+  {
+    slug: "forgekitdev",
+    name: "ForgeKitDev",
+    tagline: "Validadores, geradores e utilitários para quem programa.",
+    status: ["Grátis"],
     image: "/generated_images/banner_forgekitdev.png",
-    tags: ["React.js", "Tailwind", "Node.js"],
-    badges: ["Free", "PWA"],
     link: "https://forgekitdev.mscodify.dev.br/",
   },
   {
-    title: "ToolPocket - Tools for everyday use",
-    description:
-      "Aplicação com ferramentas práticas para facilitar tarefas diárias, como conversores, calculadoras e geradores.",
-    image: "/generated_images/banner_toolpocket.png",
-    tags: ["React.js", "Node.js"],
-    badges: ["Free", "PWA"],
-    link: "https://toolpocket.mscodify.dev.br/",
-  },
-    {
-    title: "Cloudless Play - Free player for your offline media",
-    description:
-      "Player gratuito para reprodução de mídia offline, suportando diversos formatos de áudio.",
+    slug: "cloudless-play",
+    name: "Cloudless Play",
+    tagline: "Toque seus áudios offline, sem conta e sem nuvem.",
+    status: ["Grátis"],
     image: "/generated_images/banner_cloudless-player.png",
-    tags: ["Vite", "Node.js"],
-    badges: ["Free", "PWA"],
     link: "https://cloudless-play.mscodify.dev.br/",
   },
   {
-    title: "VetAgende - Agendamento online para clínicas e petshops",
-    description: "Crie sua página pública em minutos e reduza as faltas com lembretes automáticos. Foque no que importa: cuidar dos animais.",
+    slug: "vetagende",
+    name: "VetAgende",
+    tagline:
+      "Agendamento online para clínicas e petshops, com lembretes automáticos.",
+    status: ["Pago"],
     image: "/generated_images/banner_vetagende.png",
-    tags: ["Next.js", "Node.js"],
-    badges: ["Paid"],
     link: "https://vetagende.com.br/",
-  }
+  },
+  {
+    slug: "reqfly",
+    name: "ReqFly",
+    tagline: "Teste e automatize requisições HTTP no Windows.",
+    status: ["Em desenvolvimento"],
+    image: "/generated_images/reqfly_banner_3.png",
+    link: "https://reqfly.mscodify.dev.br",
+  },
 ];

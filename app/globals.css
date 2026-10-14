@@ -79,12 +79,3 @@
     cursor: pointer;
   }
 }
-
-@layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px hsla(199, 89%, 48%, 0.5);
-  }
-  .glass {
-    @apply bg-background/80 backdrop-blur-md border border-white/10;
-  }
-}

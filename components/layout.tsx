@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main>{children}</main>
 
-      <footer className="border-t-2 border-foreground bg-foreground text-background">
+      <footer className="border-t-2 border-foreground bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-5xl flex-wrap justify-between gap-x-6 gap-y-3 px-6 py-10 text-base">
           <p>
             Dúvida ou sugestão?{" "}

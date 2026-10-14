@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="mx-auto max-w-5xl px-6 pb-16 pt-16 md:pb-24 md:pt-28">
       <h1 className="rise max-w-4xl text-[clamp(2.75rem,8.5vw,6.5rem)] font-extrabold leading-[0.95] tracking-tight">
         Pequenos produtos web que resolvem{" "}
-        <span className="underline decoration-wavy decoration-[0.06em] underline-offset-[0.12em]">
+        <span className="text-primary underline decoration-wavy decoration-[0.06em] underline-offset-[0.12em]">
           uma coisa bem.
         </span>
       </h1>

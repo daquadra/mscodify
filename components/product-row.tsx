@@ -24,7 +24,7 @@ export default function ProductRow({
       >
         <div className="mx-auto grid max-w-5xl items-center gap-x-8 gap-y-5 px-6 py-8 md:grid-cols-[auto_1fr_auto] md:py-10">
           <div
-            className="w-40 rounded-2xl p-2 transition-transform duration-300 ease-out motion-safe:group-hover:-rotate-3 motion-safe:group-hover:scale-105 md:w-48"
+            className="w-40 rounded-2xl border-2 border-foreground p-2 transition-transform duration-300 ease-out motion-safe:group-hover:-rotate-3 motion-safe:group-hover:scale-105 md:w-48"
             style={{ backgroundColor: "var(--accent)" }}
           >
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-background">

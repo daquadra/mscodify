@@ -4,12 +4,12 @@
   --font-sans: var(--font-figtree), system-ui, sans-serif;
   --font-heading: var(--font-bricolage), system-ui, sans-serif;
 
-  --color-background: oklch(0.965 0.012 85);
+  --color-background: oklch(0.985 0.012 95);
   --color-foreground: oklch(0.2 0.02 60);
   --color-muted-foreground: oklch(0.42 0.02 70);
   --color-border: oklch(0.2 0.02 60);
   --color-primary: oklch(0.34 0.06 200);
-  --color-primary-foreground: oklch(0.965 0.012 85);
+  --color-primary-foreground: oklch(0.985 0.012 95);
 }
 
 @layer base {

@@ -73,15 +73,7 @@ export default function RootLayout({
     name: site.name,
     url: site.url,
     logo: new URL(site.ogImage, site.url).toString(),
-  };
-  const localBusinessLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: site.name,
-    url: site.url,
     email: site.contactEmail,
-    telephone: site.contactPhone,
-    sameAs: [site.url],
   };
 
   return (
@@ -92,7 +84,7 @@ export default function RootLayout({
         <Script
           id="ld-organization"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationLd, localBusinessLd]) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
         {children}
       </body>

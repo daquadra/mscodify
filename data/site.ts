@@ -6,6 +6,7 @@ export const site = {
   url: "https://mscodify.dev.br",
   locale: "pt-BR",
   ogImage: "/opengraph.png",
+  ogImageAlt: "mscodify: software sob medida para o seu negócio",
   contactEmail: "suporte@mscodify.dev.br",
   whatsapp: "https://wa.me/5569984432406",
   keywords: [

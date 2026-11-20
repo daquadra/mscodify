@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-figtree), system-ui, sans-serif;
-  --font-heading: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-inter-tight), var(--font-inter), system-ui,
+    sans-serif;
 
-  --color-background: oklch(0.985 0.012 95);
-  --color-foreground: oklch(0.2 0.02 60);
-  --color-muted-foreground: oklch(0.42 0.02 70);
-  --color-border: oklch(0.2 0.02 60);
-  --color-primary: oklch(0.34 0.06 200);
-  --color-primary-foreground: oklch(0.985 0.012 95);
+  --color-background: #f6f6f4;
+  --color-surface: #ffffff;
+  --color-footer: #eeeeeb;
+  --color-foreground: #16181d;
+  --color-muted-foreground: #565b64;
+  --color-rule: #d9dadc;
+  --color-border: #16181d;
+  --color-primary: #1d4e89;
 }
 
 @layer base {
@@ -17,30 +20,16 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
   h1,
-  h2 {
+  h2,
+  h3 {
     @apply font-heading;
   }
   a {
     cursor: pointer;
   }
-}
-
-@layer utilities {
-  .rise {
-    animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-    animation-delay: calc(var(--i, 0) * 70ms);
-  }
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .rise {
-    animation: none;
+  a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }

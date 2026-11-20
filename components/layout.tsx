@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/data/site";
 import LogoMark from "@/components/logo";
+import SideNav from "@/components/side-nav";
 
 export const container = "mx-auto max-w-[1200px] px-5 sm:px-8";
 
@@ -14,7 +15,7 @@ const navLinks = [
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
-      <header className="border-b border-rule">
+      <header id="topo" className="border-b border-rule">
         <div className={`${container} flex min-h-18 items-center justify-between gap-6`}>
           <Link
             href="/"
@@ -42,6 +43,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </header>
+
+      <SideNav headerId="topo" />
 
       <main>{children}</main>
 

@@ -6,28 +6,29 @@ brand
 
 ## Users
 
-Pessoas comuns que chegam para usar uma ferramenta e resolver algo rápido: controlar gastos, converter um valor, tocar um áudio, agendar um banho. Muitas vezes no celular, sem conhecimento técnico. Alguns são devs (ForgeKitDev) ou donos de clínica e petshop (VetAgende), mas o padrão é o usuário leigo.
+Donos e responsáveis de pequenas e médias empresas que precisam de um sistema, uma automação ou ajuda com um software que já usam. Em geral não são técnicos. Chegam por indicação ou busca, muitas vezes pelo celular, e querem saber rapidamente o que a mscodify faz e como falar com alguém.
 
 ## Product Purpose
 
-mscodify é a vitrine de pequenos produtos web do mesmo autor (Saldo Leve, ToolPocket, ForgeKitDev, Cloudless Play, VetAgende, ReqFly). O site não vende serviços de desenvolvimento. Sucesso: o visitante entende o que cada produto faz em uma frase e abre um deles em poucos segundos. Contato existe, mas discreto, no rodapé.
+mscodify é o site institucional de uma empresa que desenvolve software sob medida. O site não é portfólio: ele garante presença na internet, apresenta o serviço em poucas linhas e leva ao contato. Sucesso: o visitante entende o que a empresa faz e chama no WhatsApp ou manda um e-mail. Os produtos próprios (Saldo Leve, ToolPocket, ForgeKitDev, Cloudless Play, VetAgende, ReqFly) aparecem só como uma linha discreta, para dar credibilidade.
 
 ## Brand Personality
 
-Calorosa, amigável, direta. Voz humana e simples, sem jargão. Passa confiança a quem não é técnico, sem infantilizar e sem corporativismo.
+Séria, clara, confiável. Voz direta e humana, sem jargão técnico e sem exagero de marketing.
 
 ## Anti-references
 
 - Site de dev escuro com neon, brilho e gradiente de texto.
 - Template SaaS: hero com selo "disponível", grade de cards idênticos, seção de stack tecnológica.
 - Site de agência que lista tecnologias em vez de resolver problemas.
+- Números e depoimentos inventados.
 
 ## Design Principles
 
-1. O produto vem antes da marca: cada linha mostra o que o produto faz, não a tecnologia por trás.
-2. Uma ação por linha: abrir. Nada compete com isso.
-3. Calor humano pela cor, pela tipografia e pelo tom do texto, sem ilustração decorativa.
-4. Poucas coisas, bem feitas: sem seção que não ajude a escolher um produto.
+1. O contato é a ação principal: aparece na abertura, no cabeçalho e no fim da página.
+2. Serviço explicado pelo problema que resolve, não pela tecnologia.
+3. Sobriedade: tipografia neutra, uma cor de acento, linhas finas, nada decorativo.
+4. Pouco texto, bem escrito: sem seção que não ajude a entender o serviço ou a entrar em contato.
 5. Funciona em um celular barato, ao sol, com uma mão.
 
 ## Accessibility & Inclusion

@@ -1,42 +1,38 @@
-import { projects } from "@/data/projects";
+import { ArrowRight } from "lucide-react";
+import { site } from "@/data/site";
+import { container } from "@/components/layout";
 
 export default function Hero() {
-  const inDevelopment = projects.filter(
-    (project) => project.access === "Em desenvolvimento"
-  ).length;
-
-  const stats = [
-    { label: "Produtos", value: projects.length },
-    { label: "No ar", value: projects.length - inDevelopment },
-    { label: "Em desenvolvimento", value: inDevelopment, wide: true },
-  ];
-
   return (
-    <section className="mx-auto flex max-w-[1200px] flex-wrap items-end gap-x-20 gap-y-12 px-5 pb-[clamp(56px,7vw,88px)] pt-[clamp(56px,8vw,104px)] sm:px-8">
-      <div className="min-w-0 flex-[999_1_560px]">
-        <p className="mb-6 text-sm font-medium text-muted-foreground">
-          Catálogo de produtos
-        </p>
-        <h1 className="max-w-[820px] text-[clamp(38px,5.2vw,66px)] font-semibold leading-[1.04] tracking-[-0.028em] text-balance">
-          Software simples para tarefas do dia a dia.
-        </h1>
-      </div>
-
-      <div className="max-w-[420px] flex-[1_1_320px]">
-        <p className="text-lg leading-relaxed text-muted-foreground">
-          A mscodify cria e mantém pequenos produtos web. Cada um resolve uma
-          tarefa específica, e a maioria abre direto no navegador.
-        </p>
-        <dl className="mt-8 flex gap-6 border-t border-border pt-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className={stat.wide ? "flex-[1.6_1_0]" : "flex-1"}>
-              <dt className="text-[13px] text-muted-foreground">{stat.label}</dt>
-              <dd className="mt-1 font-heading text-[28px] font-semibold tabular-nums">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+    <section className={`${container} pb-[clamp(64px,8vw,112px)] pt-[clamp(64px,9vw,128px)]`}>
+      <p className="mb-6 text-sm font-medium text-muted-foreground">
+        Desenvolvimento de software
+      </p>
+      <h1 className="max-w-[900px] text-[clamp(38px,5.6vw,72px)] font-semibold leading-[1.03] tracking-[-0.03em] text-balance">
+        Software sob medida para o seu negócio.
+      </h1>
+      <p className="mt-7 max-w-[600px] text-[clamp(17px,1.6vw,20px)] leading-relaxed text-muted-foreground">
+        Criamos sistemas web, automações e ferramentas internas, da primeira
+        conversa até o sistema funcionando. Conte o que você precisa e
+        respondemos com uma proposta.
+      </p>
+      <div className="mt-10 flex flex-wrap gap-3">
+        <a
+          href={site.whatsapp}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex min-h-13 items-center gap-2 rounded-md bg-primary px-6 text-base font-semibold text-white transition-colors hover:bg-primary-hover hover:text-white motion-reduce:transition-none"
+        >
+          Conversar no WhatsApp
+          <ArrowRight aria-hidden="true" className="size-4" strokeWidth={2} />
+          <span className="sr-only">(abre em nova aba)</span>
+        </a>
+        <a
+          href={`mailto:${site.contactEmail}`}
+          className="inline-flex min-h-13 items-center rounded-md border border-control px-6 text-base font-semibold transition-colors hover:border-foreground motion-reduce:transition-none"
+        >
+          Enviar e-mail
+        </a>
       </div>
     </section>
   );

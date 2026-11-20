@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${figtree.variable} ${bricolage.variable} antialiased`}
+        className={`${inter.variable} ${interTight.variable} antialiased`}
       >
         <Script
           id="ld-organization"

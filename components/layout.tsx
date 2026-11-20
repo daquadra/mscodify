@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { site } from "@/data/site";
+import LogoMark from "@/components/logo";
 
 export const container = "mx-auto max-w-[1200px] px-5 sm:px-8";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#como-trabalhamos", label: "Como trabalhamos" },
+  { href: "#produtos", label: "Produtos" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -18,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             href="/"
             className="flex items-center gap-2.5 py-2.5 font-heading text-[19px] font-semibold tracking-[-0.02em]"
           >
-            <span aria-hidden="true" className="block size-5 rounded-[3px] bg-foreground" />
+            <LogoMark className="size-8 flex-none" />
             {site.name}
           </Link>
           <nav aria-label="Principal" className="flex items-center gap-8">
@@ -45,9 +47,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <footer className="border-t border-ink-hairline bg-ink text-ink-muted">
         <div
-          className={`${container} flex flex-wrap justify-between gap-x-6 gap-y-2 pb-8 pt-6 text-[13px]`}
+          className={`${container} flex flex-wrap justify-between gap-x-6 gap-y-2 items-center pb-8 pt-6 text-[13px]`}
         >
-          <p>
+          <p className="flex items-center gap-2.5">
+            <LogoMark className="size-5 flex-none" />
             © {new Date().getFullYear()} {site.name}
           </p>
           <p>{new URL(site.url).host}</p>

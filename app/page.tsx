@@ -2,7 +2,7 @@ import Layout from "@/components/layout";
 import Hero from "@/components/hero";
 import Services from "@/components/services";
 import Process from "@/components/process";
-import OwnProducts from "@/components/own-products";
+import Products from "@/components/products";
 import Contact from "@/components/contact";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Process />
-      <OwnProducts />
+      <Products />
       <Contact />
     </Layout>
   );

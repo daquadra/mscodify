@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
@@ -24,13 +23,6 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   keywords: site.keywords,
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.ico",
-  },
   alternates: {
     canonical: "/",
   },
@@ -47,7 +39,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: site.name,
+        alt: site.ogImageAlt,
       },
     ],
   },
@@ -55,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: [{ url: site.ogImage, alt: site.name }],
+    images: [{ url: site.ogImage, alt: site.ogImageAlt }],
   },
   robots: {
     index: true,
@@ -73,7 +65,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: site.name,
     url: site.url,
-    logo: new URL(site.ogImage, site.url).toString(),
+    logo: new URL("/logo.png", site.url).toString(),
     email: site.contactEmail,
   };
 
@@ -82,8 +74,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${interTight.variable} antialiased`}
       >
-        <Script
-          id="ld-organization"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />

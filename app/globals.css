@@ -6,13 +6,21 @@
     sans-serif;
 
   --color-background: #f6f6f4;
-  --color-surface: #ffffff;
-  --color-footer: #eeeeeb;
+  --color-band: #eeeeeb;
   --color-foreground: #16181d;
   --color-muted-foreground: #565b64;
   --color-rule: #d9dadc;
+  --color-control: #b9bbc0;
   --color-border: #16181d;
   --color-primary: #1d4e89;
+  --color-primary-hover: #163d6c;
+
+  /* Seção escura de contato */
+  --color-ink: #16181d;
+  --color-ink-muted: #a9adb5;
+  --color-ink-soft: #c4c7cd;
+  --color-ink-rule: #5c616b;
+  --color-ink-hairline: #2e3138;
 }
 
 @layer base {
@@ -31,5 +39,8 @@
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
     border-radius: 2px;
+  }
+  .on-dark a:focus-visible {
+    outline-color: #ffffff;
   }
 }

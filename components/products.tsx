@@ -40,7 +40,10 @@ function Showcase({ project }: { project: Project }) {
         <div
           className={`absolute left-1/2 top-[10%] w-[46%] -translate-x-1/2 overflow-hidden rounded-t-[26px] border-[6px] border-b-0 border-[#111827] bg-white shadow-[0_24px_60px_rgba(0,0,0,0.35)] ${lift}`}
         >
-          <div className="flex h-6 items-center justify-center bg-[#4f46e5]">
+          <div
+            className="flex h-6 items-center justify-center"
+            style={{ background: project.statusBar ?? "#111827" }}
+          >
             <span className="h-1.5 w-12 rounded-full bg-black/25" />
           </div>
           <Image

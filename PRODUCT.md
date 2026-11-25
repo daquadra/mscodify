@@ -10,7 +10,7 @@ Donos e responsáveis de pequenas e médias empresas que precisam de um sistema,
 
 ## Product Purpose
 
-mscodify é o site institucional de uma empresa que desenvolve software sob medida. O site não é portfólio: ele garante presença na internet, apresenta o serviço em poucas linhas e leva ao contato. Sucesso: o visitante entende o que a empresa faz e chama no WhatsApp ou manda um e-mail. Uma seção "Produtos" mostra os produtos próprios em destaque (hoje Saldo Leve e ToolPocket), para dar credibilidade. A marca é o símbolo `</>` do favicon (app/icon.svg).
+mscodify é o site institucional de uma empresa que desenvolve software sob medida. O site não é portfólio: ele garante presença na internet, apresenta o serviço em poucas linhas e leva ao contato. Sucesso: o visitante entende o que a empresa faz e chama no WhatsApp ou manda um e-mail. Uma seção "Produtos" mostra os produtos próprios em destaque (hoje Saldo Leve, ToolPocket e Scrapper Protocol), para dar credibilidade. A marca é o símbolo `</>` do favicon (app/icon.svg).
 
 ## Brand Personality
 
